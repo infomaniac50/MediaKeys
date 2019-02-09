@@ -1,2 +1,11 @@
+*.cycdx
+*.cydsn/ARM_GCC_*/
+*.cydsn/codegentemp/
+*.cydsn/Export/
+*.cydsn/Generated_Source/
+*.cyfit
 *.Derek
-MediaKeys\.cydsn/Generated_Source/
+*.log
+*.rpt
+*.svd
+*_timing\.html
