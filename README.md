@@ -21,3 +21,13 @@ This project uses the USB component. This component has very tight clock require
   - [x] Osc
 - USB: IMOx2 - 48 MHz
   - [ ] Divide by 2
+
+## Debugging
+
+  **You can't do it.**
+
+  Debugging the main chip stops all activity. There is no way around this unless someone at Cypress updates the debugger to not interfere with the USB component.
+
+  The report rate for this project is 10 milliseconds. If the USB device does not respond with that time then the host will disconnect the device. If you try this anyway then the device will connect and then immediately disconnect. Windows will tell you there is a problem with the device. After that Windows won't talk to the device anymore. To fix it you have to stop the debugger and then unplug and reinsert the target usb cable.
+
+  If you must debug the target then you have to disable all USB related code. This includes the USBFS component on the design schematic. You can disable components by right-clicking on the symbol and selecting Disable. This will remove the "Application API" code, so you will have to comment out the function calls in your source files.
